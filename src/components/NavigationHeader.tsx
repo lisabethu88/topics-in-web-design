@@ -50,9 +50,9 @@ export default function DrawerAppBar() {
   );
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box component={"header"} sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" elevation={0}>
         <Toolbar
           sx={{ backgroundColor: lightYellow, justifyContent: "space-between" }}
         >

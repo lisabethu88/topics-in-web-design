@@ -11,15 +11,16 @@ const Logo = () => {
         sx={{ position: "absolute", width: 45, left: 100, bottom: 5 }}
       />
       <Typography
-        variant="h5"
+        variant="h6"
         component="div"
         sx={{
           flexGrow: 1,
           ...logoStyle,
           position: "relative",
+          textWrap: "nowrap",
         }}
       >
-        FATFORALL
+        FAT FOR ALL
       </Typography>
     </>
   );

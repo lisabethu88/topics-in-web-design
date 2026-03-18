@@ -1,14 +1,14 @@
-import NavigationHeader from './components/NavigationHeader'
+import NavigationHeader from "./components/NavigationHeader";
 import { Outlet } from "react-router-dom";
 
 function Layout() {
   return (
-    <div>
+    <>
       <NavigationHeader />{" "}
       <main>
-        <Outlet /> 
+        <Outlet />
       </main>
-    </div>
+    </>
   );
 }
 
