@@ -4,6 +4,7 @@ import bgImg from "../assets/hero-img1.jpg";
 import heroImg from "../assets/home-page-hero-icon.png";
 import SearchBar from "../components/SearchBar";
 import { lightYellow } from "../styles/colors";
+import HowItWorksSection from "../components/HowItWorksSection";
 
 const Home = () => {
   const content = (
@@ -53,6 +54,7 @@ const Home = () => {
   return (
     <Box sx={{ width: "100%", height: "100%", flexGrow: 1 }}>
       <Hero heroImg={bgImg} contents={content}></Hero>
+      <HowItWorksSection />
     </Box>
   );
 };
