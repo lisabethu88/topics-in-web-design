@@ -30,3 +30,13 @@ body {
 .light-lav-text-span {
   color: #d6bcf6;
 }
+.category-btn {
+  border-bottom-width: 10px;
+  border-bottom: white;
+  border-bottom-style: solid;
+}
+.category-btn:hover {
+  border-bottom-width: 10px;
+  border-bottom: black;
+  border-bottom-style: solid;
+}

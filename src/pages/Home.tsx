@@ -5,6 +5,7 @@ import heroImg from "../assets/home-page-hero-icon.png";
 import SearchBar from "../components/SearchBar";
 import { lightYellow } from "../styles/colors";
 import HowItWorksSection from "../components/HowItWorksSection";
+import CategoriesSection from "../components/CategoriesSection";
 
 const Home = () => {
   const content = (
@@ -55,6 +56,7 @@ const Home = () => {
     <Box sx={{ width: "100%", height: "100%", flexGrow: 1 }}>
       <Hero heroImg={bgImg} contents={content}></Hero>
       <HowItWorksSection />
+      <CategoriesSection />
     </Box>
   );
 };

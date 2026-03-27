@@ -14,19 +14,24 @@ const HowItWorksSection = () => {
   const blurbStyle = {
     fontFamily: "Alata",
     textAlign: "center",
-    maxWidth: { xs: 75, sm: 150 },
+    maxWidth: { xs: 100, sm: 150 },
     backgroundColor: "white",
     borderRadius: 2,
-    fontSize: { xs: "0.5rem", sm: "1rem" },
+    fontSize: { xs: "0.75rem", sm: "1rem" },
     padding: 0.1,
+    margin: 0.5,
   };
+
   const arrowStyle = {
-    width: { xs: 35, sm: 60, md: 75, lg: 100 },
+    width: { xs: "150%", sm: 60, md: 75, lg: 100 },
+    position: "relative",
+    top: { xs: 10, sm: 30 },
   };
+
   const gridItemStyle = {
     justifyItems: "center",
   };
-  const numResponsiveSize = 2;
+  const numResponsiveSize = { xs: 4, sm: 2 };
   const arrowResponsiveSize = 1;
 
   return (
@@ -38,10 +43,11 @@ const HowItWorksSection = () => {
         alignItems: "center",
         flexDirection: "column",
         fontWeight: 600,
-        padding: { xs: "0.5rem", sm: "2rem" },
+        paddingY: 2,
       }}
     >
       <Typography
+        component={"h2"}
         sx={{
           fontFamily: "Alata",
           fontSize: { xs: "2rem", sm: "3rem", md: "4rem" },
@@ -50,13 +56,13 @@ const HowItWorksSection = () => {
       >
         How It Works
       </Typography>
-      <Box
+      <Grid
+        container
         sx={{
           display: "flex",
           alignItems: "baseline",
           justifyContent: "center",
           marginBottom: 2,
-          flexDirection: "row",
         }}
       >
         {/* Step 1 */}
@@ -78,10 +84,14 @@ const HowItWorksSection = () => {
           </Typography>
         </Grid>
         {/* Arrow 2 */}
-        <Grid size={arrowResponsiveSize}>
+        <Grid size={{ xs: 0, sm: 1 }}>
           <Box
             component={"img"}
-            sx={{ ...arrowStyle, transform: "rotateX(180deg)" }}
+            sx={{
+              ...arrowStyle,
+              transform: "rotateX(180deg)",
+              display: { xs: "none", sm: "block" },
+            }}
             src={curlyArrow}
           ></Box>
         </Grid>
@@ -94,7 +104,14 @@ const HowItWorksSection = () => {
         </Grid>
         {/* Arrow 3 */}
         <Grid size={arrowResponsiveSize}>
-          <Box component={"img"} sx={arrowStyle} src={curlyArrow}></Box>
+          <Box
+            component={"img"}
+            sx={{
+              ...arrowStyle,
+              transform: { xs: "rotateX(180deg)", sm: "none" },
+            }}
+            src={curlyArrow}
+          ></Box>
         </Grid>
         {/* Step 4 */}
         <Grid size={numResponsiveSize} sx={gridItemStyle}>
@@ -103,7 +120,7 @@ const HowItWorksSection = () => {
             Share your own experience to help others.
           </Typography>
         </Grid>
-      </Box>
+      </Grid>
     </Box>
   );
 };
