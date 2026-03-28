@@ -37,6 +37,6 @@ body {
 }
 .category-btn:hover {
   border-bottom-width: 10px;
-  border-bottom: black;
+  border-bottom: #201f1f;
   border-bottom-style: solid;
 }
