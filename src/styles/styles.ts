@@ -15,3 +15,8 @@ export const logoStyle = {
   letterSpacing: 8,
   color: darkGray,
 };
+
+export const h2Style = {
+  fontSize: { xs: "2rem", sm: "3rem", md: "4rem" },
+  fontFamily: "Alata",
+};
