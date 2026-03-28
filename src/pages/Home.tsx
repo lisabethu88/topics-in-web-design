@@ -6,6 +6,7 @@ import SearchBar from "../components/SearchBar";
 import { lightYellow } from "../styles/colors";
 import HowItWorksSection from "../components/HowItWorksSection";
 import CategoriesSection from "../components/CategoriesSection";
+import HomeInfoSection from "../components/HomeInfoSection";
 
 const Home = () => {
   const content = (
@@ -43,6 +44,7 @@ const Home = () => {
         size={4}
         component={"img"}
         src={heroImg}
+        alt="Silhouette of a plus sized person and an average sized person eating at a table together"
         sx={{
           maxWidth: 400,
           height: "auto",
@@ -57,6 +59,7 @@ const Home = () => {
       <Hero heroImg={bgImg} contents={content}></Hero>
       <HowItWorksSection />
       <CategoriesSection />
+      <HomeInfoSection />
     </Box>
   );
 };
