@@ -1,4 +1,4 @@
-import React from "react";
+import { darkGray } from "../styles/colors";
 import type { Category } from "../types/types";
 import { Button, Link, Typography } from "@mui/material";
 
@@ -15,6 +15,9 @@ const CategoryButton = ({ category }: CategoryButtonProps) => {
       component={Link}
       href={link}
       sx={{
+        "& .MuiButton-startIcon svg": {
+          fontSize: { xs: 20, sm: 30, md: 40 },
+        },
         maxWidth: { xs: 200, sm: 300 },
         width: "100%",
         backgroundColor: "#bbdded",
@@ -23,11 +26,11 @@ const CategoryButton = ({ category }: CategoryButtonProps) => {
         borderBottom: "transparent",
         borderBottomStyle: "solid",
         transition: "all 0.3s ease-in-out",
-
         justifyContent: "left",
+        borderRadius: 5,
         "&:hover": {
           borderBottomWidth: "25px",
-          borderBottom: "black",
+          borderBottom: darkGray,
           borderBottomStyle: "solid",
           transition: "border-width 2s ease-in-out",
         },
@@ -35,7 +38,7 @@ const CategoryButton = ({ category }: CategoryButtonProps) => {
     >
       <Typography
         sx={{
-          color: "black",
+          color: darkGray,
           fontFamily: "Alata",
           textTransform: "capitalize",
           fontSize: { xs: "0.75rem", sm: "1rem", md: "1.5rem" },

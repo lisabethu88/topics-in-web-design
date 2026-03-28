@@ -19,7 +19,8 @@ const Hero = ({ heroImg, contents }: HeroProps) => {
         backgroundColor: "rgb(0 0 0 / 75%)",
         justifyContent: "center",
         alignContent: "center",
-        paddingTop: "64px",
+        paddingTop: { xs: "75px", md: "125px" },
+        paddingBottom: { xs: "25px", md: "75px" },
       }}
     >
       {contents}

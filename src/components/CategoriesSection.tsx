@@ -6,35 +6,38 @@ import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import HotelIcon from "@mui/icons-material/Hotel";
+import { darkGray } from "../styles/colors";
+import { h2Style } from "../styles/styles";
 const CategoriesSection = () => {
+  const iconStyle = { color: darkGray, fontSize: 50 };
   const categories = [
     {
-      icon: <FlatwareIcon sx={{ color: "black" }} />,
+      icon: <FlatwareIcon sx={iconStyle} />,
       label: "Restaurants & Bars",
       link: "https://www.website.com",
     },
     {
-      icon: <ShoppingCartIcon sx={{ color: "black" }} />,
+      icon: <ShoppingCartIcon sx={iconStyle} />,
       label: "Shopping",
       link: "https://www.website.com",
     },
     {
-      icon: <HealthAndSafetyIcon sx={{ color: "black" }} />,
+      icon: <HealthAndSafetyIcon sx={iconStyle} />,
       label: "Health & Medical",
       link: "https://www.website.com",
     },
     {
-      icon: <TheaterComedyIcon sx={{ color: "black" }} />,
+      icon: <TheaterComedyIcon sx={iconStyle} />,
       label: "Theaters",
       link: "https://www.website.com",
     },
     {
-      icon: <FitnessCenterIcon sx={{ color: "black" }} />,
+      icon: <FitnessCenterIcon sx={iconStyle} />,
       label: "Spas & Gyms",
       link: "https://www.website.com",
     },
     {
-      icon: <HotelIcon sx={{ color: "black" }} />,
+      icon: <HotelIcon sx={iconStyle} />,
       label: "Hotels & Travel",
       link: "https://www.website.com",
     },
@@ -42,20 +45,14 @@ const CategoriesSection = () => {
   return (
     <Box
       sx={{
-        padding: 5,
+        paddingY: { xs: 2, md: 5 },
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
       }}
     >
-      <Typography
-        component={"h2"}
-        sx={{
-          fontSize: { xs: "2rem", sm: "3rem", md: "4rem" },
-          fontFamily: "Alata",
-        }}
-      >
+      <Typography component={"h2"} sx={h2Style}>
         Categories
       </Typography>
       <Box
@@ -67,6 +64,7 @@ const CategoriesSection = () => {
           justifyContent: "center",
           alignItems: "center",
           width: "fit-content",
+          maxWidth: 1200,
         }}
       >
         {categories.map((category) => {

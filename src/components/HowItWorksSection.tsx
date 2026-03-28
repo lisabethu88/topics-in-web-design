@@ -1,6 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { lightLavender } from "../styles/colors";
 import curlyArrow from "../assets/hand-drawn-spiral-arrow.png";
+import { h2Style } from "../styles/styles";
 
 const HowItWorksSection = () => {
   const numStyle = {
@@ -14,10 +15,10 @@ const HowItWorksSection = () => {
   const blurbStyle = {
     fontFamily: "Alata",
     textAlign: "center",
-    maxWidth: { xs: 100, sm: 150 },
+    maxWidth: { xs: 100, sm: 150, md: 200 },
     backgroundColor: "white",
     borderRadius: 2,
-    fontSize: { xs: "0.75rem", sm: "1rem" },
+    fontSize: { xs: "0.9rem", sm: "1rem", md: "1.5rem" },
     padding: 0.1,
     margin: 0.5,
   };
@@ -43,15 +44,13 @@ const HowItWorksSection = () => {
         alignItems: "center",
         flexDirection: "column",
         fontWeight: 600,
-        paddingY: 2,
+        paddingY: { xs: 2, md: 5 },
       }}
     >
       <Typography
         component={"h2"}
         sx={{
-          fontFamily: "Alata",
-          fontSize: { xs: "2rem", sm: "3rem", md: "4rem" },
-          textAlign: "center",
+          ...h2Style,
         }}
       >
         How It Works
@@ -74,7 +73,12 @@ const HowItWorksSection = () => {
         </Grid>
         {/* Arrow 1 */}
         <Grid size={arrowResponsiveSize}>
-          <Box component={"img"} sx={arrowStyle} src={curlyArrow}></Box>
+          <Box
+            component={"img"}
+            sx={arrowStyle}
+            src={curlyArrow}
+            alt="Doodle of an arrow pointing to the right"
+          />
         </Grid>
         {/* Step 2 */}
         <Grid size={numResponsiveSize} sx={gridItemStyle}>
@@ -93,6 +97,7 @@ const HowItWorksSection = () => {
               display: { xs: "none", sm: "block" },
             }}
             src={curlyArrow}
+            alt="Doodle of an arrow pointing to the right"
           ></Box>
         </Grid>
         {/* Step 3 */}
@@ -111,6 +116,7 @@ const HowItWorksSection = () => {
               transform: { xs: "rotateX(180deg)", sm: "none" },
             }}
             src={curlyArrow}
+            alt="Doodle of an arrow pointing to the right"
           ></Box>
         </Grid>
         {/* Step 4 */}

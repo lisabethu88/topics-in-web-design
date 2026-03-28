@@ -9,6 +9,7 @@ const Logo = () => {
         component={"img"}
         src={logo}
         sx={{ position: "absolute", width: 45, left: 100, bottom: 5 }}
+        alt="Fat For All logo - Desktop"
       />
       <Typography
         variant="h6"

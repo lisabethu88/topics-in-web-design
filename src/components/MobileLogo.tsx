@@ -14,6 +14,7 @@ const MobileLogo = () => {
           left: 99,
           top: 8,
         }}
+        alt="Fat For All logo - Mobile"
       />
       <Typography
         variant="h6"
