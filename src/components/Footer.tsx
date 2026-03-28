@@ -5,9 +5,7 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import RestoreIcon from "@mui/icons-material/Restore";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import Logo from "./Logo";
 import FooterLogo from "./FooterLogo";
-import { Restore } from "@mui/icons-material";
 
 export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState(0);
@@ -27,7 +25,7 @@ export default function SimpleBottomNavigation() {
         sx={{ display: "flex" }}
         showLabels
         value={value}
-        onChange={(event, newValue) => {
+        onChange={(_event, newValue) => {
           setValue(newValue);
         }}
       >
