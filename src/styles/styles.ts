@@ -17,6 +17,6 @@ export const logoStyle = {
 };
 
 export const h2Style = {
-  fontSize: { xs: "2rem", sm: "3rem", md: "4rem" },
+  fontSize: "3rem",
   fontFamily: "Alata",
 };

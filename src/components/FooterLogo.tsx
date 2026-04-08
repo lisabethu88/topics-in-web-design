@@ -8,19 +8,17 @@ const Logo = () => {
       <Box
         component={"img"}
         src={logo}
-        sx={{ position: "absolute", width: 35, left: 50, bottom: 15 }}
+        sx={{ position: "absolute", width: 35, left: 65, bottom: 15 }}
         alt="Fat For All logo - Desktop"
       />
       <Typography
-        variant="h6"
-        component="div"
+        variant="h3"
         sx={{
           flexGrow: 1,
           ...logoStyle,
           position: "relative",
           textWrap: "nowrap",
           textAlign: "center",
-          fontSize: 15,
           letterSpacing: 5,
         }}
       >

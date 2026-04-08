@@ -1,47 +1,75 @@
-import { darkGray } from "../styles/colors";
+import { darkGray, green, lightYellow } from "../styles/colors";
 import type { Category } from "../types/types";
-import { Button, Link, Typography } from "@mui/material";
+import { Button, Link, Typography, Box } from "@mui/material";
 
 interface CategoryButtonProps {
   category: Category;
 }
+
 const CategoryButton = ({ category }: CategoryButtonProps) => {
-  const icon = category.icon;
-  const link = category.link;
-  const label = category.label;
+  const { icon, link, label } = category;
+
   return (
     <Button
-      startIcon={icon}
       component={Link}
       href={link}
       sx={{
-        "& .MuiButton-startIcon svg": {
-          fontSize: { xs: 20, sm: 30, md: 40 },
-        },
-        maxWidth: { xs: 200, sm: 300 },
         width: "100%",
-        backgroundColor: "#bbdded",
-        padding: 2,
-        borderBottomWidth: "25px",
-        borderBottom: "transparent",
-        borderBottomStyle: "solid",
-        transition: "all 0.3s ease-in-out",
-        justifyContent: "left",
-        borderRadius: 5,
+        minHeight: 140,
+
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 1.5,
+
+        borderRadius: 4,
+        backgroundColor: lightYellow,
+        backdropFilter: "blur(6px)",
+
+        transition: "all 0.3s ease",
+
         "&:hover": {
-          borderBottomWidth: "25px",
-          borderBottom: darkGray,
-          borderBottomStyle: "solid",
-          transition: "border-width 2s ease-in-out",
+          transform: "translateY(-6px)",
+          boxShadow: 6,
+        },
+
+        "&:hover .icon": {
+          transform: "scale(1.15) rotate(3deg)",
+        },
+
+        "&:hover .label": {
+          transform: "translateY(2px)",
+          opacity: 1,
         },
       }}
     >
+      {/* ICON WRAPPER */}
+      <Box
+        className="icon"
+        sx={{
+          color: green,
+          fontSize: 40,
+          transition: "all 0.3s ease",
+          display: "flex",
+        }}
+      >
+        {icon}
+      </Box>
+
+      {/* LABEL */}
       <Typography
+        className="label"
         sx={{
           color: darkGray,
-          fontFamily: "Alata",
-          textTransform: "capitalize",
-          fontSize: { xs: "0.75rem", sm: "1rem", md: "1.5rem" },
+          fontSize: { xs: "1rem", sm: "1.2rem" },
+          opacity: 0.8,
+          transition: "all 0.3s ease",
+          fontFamily: "'Raleway', sans-serif",
+          fontWeight: 600,
+          fontStyle: "normal",
+          letterSpacing: 4,
+          textTransform: "uppercase",
         }}
       >
         {label}

@@ -11,14 +11,13 @@ const MobileLogo = () => {
         sx={{
           position: "absolute",
           width: 30,
-          left: 99,
-          top: 8,
+          left: 98.5,
+          top: 5,
         }}
         alt="Fat For All logo - Mobile"
       />
       <Typography
-        variant="h6"
-        component="div"
+        variant="h1"
         sx={{
           flexGrow: 1,
           ...logoStyle,

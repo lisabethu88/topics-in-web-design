@@ -2,7 +2,7 @@ import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
-import { green } from "../styles/colors";
+import { paleGreen } from "../styles/colors";
 
 export default function SearchBar() {
   return (
@@ -14,7 +14,7 @@ export default function SearchBar() {
         alignItems: "center",
         width: "100%",
         marginY: 2,
-        borderColor: green,
+        borderColor: paleGreen,
         borderWidth: 10,
         borderStyle: "solid",
       }}

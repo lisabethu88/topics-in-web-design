@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import FlatwareIcon from "@mui/icons-material/Flatware";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CategoryButton from "./CategoryButton";
@@ -6,10 +6,10 @@ import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import HotelIcon from "@mui/icons-material/Hotel";
-import { darkGray } from "../styles/colors";
+import { green, lightYellow } from "../styles/colors";
 import { h2Style } from "../styles/styles";
 const CategoriesSection = () => {
-  const iconStyle = { color: darkGray, fontSize: 50 };
+  const iconStyle = { color: green, fontSize: 50 };
   const categories = [
     {
       icon: <FlatwareIcon sx={iconStyle} />,
@@ -42,36 +42,41 @@ const CategoriesSection = () => {
       link: "https://www.website.com",
     },
   ];
+
   return (
-    <Box
+    <Container
       sx={{
-        paddingY: { xs: 2, md: 5 },
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
+        py: { xs: 6, md: 10 },
+        px: 2,
+        textAlign: "center",
       }}
     >
-      <Typography component={"h2"} sx={h2Style}>
-        Categories
+      <Typography variant={"h2"} sx={{ ...h2Style, color: lightYellow }}>
+        Explore by Category
       </Typography>
-      <Box
+
+      <Typography
         sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          paddingY: 2,
-          gap: "1rem",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "fit-content",
-          maxWidth: 1200,
+          color: lightYellow,
+          opacity: 0.8,
+          mt: 1,
+          mb: 6,
+          maxWidth: 500,
+          mx: "auto",
+          fontFamily: "Alata",
         }}
       >
-        {categories.map((category) => {
-          return <CategoryButton category={category}></CategoryButton>;
-        })}
-      </Box>
-    </Box>
+        Find businesses based on the experiences that matter most to you.
+      </Typography>
+
+      <Grid container spacing={4} justifyContent="center">
+        {categories.map((category, index) => (
+          <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
+            <CategoryButton category={category} />
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
   );
 };
 

@@ -1,12 +1,12 @@
 import Hero from "../components/Hero";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Divider, Grid, Typography } from "@mui/material";
 import bgImg from "../assets/hero-img1.jpg";
 import heroImg from "../assets/home-page-hero-icon.png";
 import SearchBar from "../components/SearchBar";
-import { lightYellow } from "../styles/colors";
-import HowItWorksSection from "../components/HowItWorksSection";
+import { darkGray, lightYellow } from "../styles/colors";
 import CategoriesSection from "../components/CategoriesSection";
-import HomeInfoSection from "../components/HomeInfoSection";
+import HowItWorks from "../components/HowItWorks";
+import WhosItFor from "../components/WhosItFor";
 
 const Home = () => {
   const content = (
@@ -55,11 +55,28 @@ const Home = () => {
   );
 
   return (
-    <Box sx={{ width: "100%", height: "100%", flexGrow: 1 }}>
+    <Box
+      sx={{
+        width: "100%",
+        height: "100%",
+        flexGrow: 1,
+        backgroundColor: darkGray,
+      }}
+    >
       <Hero heroImg={bgImg} contents={content}></Hero>
-      <HowItWorksSection />
+      <HowItWorks />
+      <Divider
+        sx={{ borderColor: "#2e2d2d", borderWidth: 3, mx: "10%" }}
+      />{" "}
       <CategoriesSection />
-      <HomeInfoSection />
+      <Divider
+        sx={{
+          borderColor: "#2e2d2d",
+          mx: "10%",
+          borderWidth: 3,
+        }}
+      />
+      <WhosItFor />
     </Box>
   );
 };
