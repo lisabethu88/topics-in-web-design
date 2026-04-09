@@ -12,7 +12,7 @@ export const categories: Category[] = [
   {
     icon: <FlatwareIcon sx={iconStyle} />,
     label: "Restaurants & Bars",
-    link: "restaurants-and-bars",
+    link: "restaurants",
   },
   {
     icon: <ShoppingCartIcon sx={iconStyle} />,
