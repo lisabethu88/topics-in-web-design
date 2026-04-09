@@ -13,6 +13,7 @@ const CategoryPage = () => {
   );
   const label = match?.label || "Category not found";
 
+  console.log("label", label);
   return (
     <Box>
       <Hero
