@@ -3,15 +3,15 @@ import { Box, Typography } from "@mui/material";
 import Hero from "../components/Hero";
 import heroImg from "../assets/pexels-tiffanya-10575037.jpg";
 import { categories } from "../data/data";
-import { useLocation } from "react-router-dom";
-import type { Category } from "../types/types";
 import { lightYellow } from "../styles/colors";
+import { useParams } from "react-router-dom";
 
 const CategoryPage = () => {
-  const location = useLocation();
-  const path = location.pathname.split("/").pop() || ""; // string
-  const match = categories.find((category: Category) => category.link === path);
-  const label = match?.label || "";
+  const { category: categoryParam } = useParams<{ category: string }>();
+  const match = categories.find(
+    (category) => category.link.toLowerCase() === categoryParam?.toLowerCase(),
+  );
+  const label = match?.label || "Category not found";
 
   return (
     <Box>
