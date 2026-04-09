@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material";
-
 import Hero from "../components/Hero";
 import heroImg from "../assets/pexels-tiffanya-10575037.jpg";
 import { categories } from "../data/data";

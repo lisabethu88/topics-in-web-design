@@ -9,7 +9,7 @@ import Layout from "./Layout";
 import Home from "./pages/Home";
 import CategoriesPage from "./pages/CategoriesPage";
 import AboutPage from "./pages/AboutPage";
-import RestPage from "./pages/RestPage";
+import CategoryPage from "./pages/CategoryPage";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/categories" element={<CategoriesPage />} />
-          <Route path="/categories/restaurants" element={<RestPage />} />
+          <Route path="/categories/:category" element={<CategoryPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
