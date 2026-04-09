@@ -20,10 +20,9 @@ function App() {
           {/* Home page */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
-          {/* Optional: catch-all 404 */}
-          <Route path="*" element={<Navigate to="/" replace />} />{" "}
           <Route path="/categories" element={<CategoriesPage />} />
           <Route path="/categories/:category" element={<CategoryPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
     </Router>
