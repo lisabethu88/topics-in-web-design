@@ -1,7 +1,7 @@
 import { darkGray, green, lightYellow } from "../styles/colors";
 import type { Category } from "../types/types";
 import { Button, Typography, Box } from "@mui/material";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 interface CategoryButtonProps {
   category: Category;
