@@ -14,8 +14,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import { navItemStyle } from "../styles/styles.ts";
 import { lightYellow, darkGray } from "../styles/colors.ts";
-import Logo from "./Logo.tsx";
-import MobileLogo from "./MobileLogo.tsx";
+import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -35,9 +34,17 @@ export default function DrawerAppBar() {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Box sx={{ display: { xs: "block", sm: "none" }, paddingY: 1 }}>
-        <MobileLogo />
-      </Box>
+      <Box
+        component={"img"}
+        src={logo}
+        sx={{
+          width: 150,
+          display: { xs: "block", sm: "none" },
+          paddingY: 1,
+          margin: "0 auto",
+        }}
+        alt="Fat For All"
+      />
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -76,9 +83,13 @@ export default function DrawerAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            <Logo />
-          </Box>
+          <Box
+            component={"img"}
+            src={logo}
+            sx={{ width: 200, display: { xs: "none", sm: "block" } }}
+            alt="Fat For All"
+          />
+
           <Box sx={{ display: { xs: "none", sm: "flex" }, flexWrap: "nowrap" }}>
             {navItems.map((item) => (
               <Button

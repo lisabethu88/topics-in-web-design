@@ -11,7 +11,7 @@ import GroupsIcon from "@mui/icons-material/Groups";
 import AccessibleIcon from "@mui/icons-material/Accessible";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 
-import { green, lavender, lightYellow } from "../styles/colors";
+import { green, lightLavender, lightYellow } from "../styles/colors";
 import { h2Style } from "../styles/styles";
 
 const audience = [
@@ -27,7 +27,7 @@ const audience = [
     description:
       "People looking to support and choose inclusive, accessible businesses.",
     icon: <GroupsIcon fontSize="large" />,
-    color: lavender,
+    color: lightLavender,
   },
   {
     title: "Disabled People",
@@ -41,7 +41,7 @@ const audience = [
     description:
       "Businesses that want to improve inclusivity and better serve all bodies.",
     icon: <StorefrontIcon fontSize="large" />,
-    color: lavender,
+    color: lightLavender,
   },
 ];
 

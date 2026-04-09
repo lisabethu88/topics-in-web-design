@@ -1,8 +1,8 @@
 import Box from "@mui/material/Box";
-import FooterLogo from "./FooterLogo";
 import { lightYellow } from "../styles/colors";
 import { navItemStyle } from "../styles/styles";
 import { Container, Link, Typography } from "@mui/material";
+import logo from "../assets/logo.png";
 
 export default function SimpleBottomNavigation() {
   const bottomNavItems = [
@@ -31,7 +31,8 @@ export default function SimpleBottomNavigation() {
         height: 130,
       }}
     >
-      <FooterLogo />
+      <Box component={"img"} src={logo} sx={{ width: 150 }} alt="Fat For All" />
+
       <Typography
         sx={{ opacity: 0.7, fontFamily: "Alata", fontSize: "0.75rem", my: 1 }}
       >

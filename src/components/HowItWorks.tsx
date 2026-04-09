@@ -1,12 +1,12 @@
 import { Typography, Box, Avatar, Stack, Grid, Container } from "@mui/material";
-import { darkGray, lavender, lightYellow } from "../styles/colors";
+import { darkGray, lightLavender, lightYellow } from "../styles/colors";
 import { h2Style } from "../styles/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import RateReviewIcon from "@mui/icons-material/RateReview";
 import SeatingIcon from "@mui/icons-material/EventSeat";
 import ShareIcon from "@mui/icons-material/Share";
 
-const iconStyle = { color: lavender };
+const iconStyle = { color: lightLavender };
 const steps = [
   {
     title: "Search",
