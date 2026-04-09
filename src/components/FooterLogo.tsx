@@ -4,11 +4,11 @@ import logo from "../assets/fatforall-logo.png";
 
 const Logo = () => {
   return (
-    <Box sx={{ paddingY: 3, position: "relative" }}>
+    <Box sx={{ pt: 2, pb: 1, position: "relative" }}>
       <Box
         component={"img"}
         src={logo}
-        sx={{ position: "absolute", width: 35, left: 65, bottom: 15 }}
+        sx={{ position: "absolute", width: 35, left: 65, top: 10 }}
         alt="Fat For All logo - Desktop"
       />
       <Typography

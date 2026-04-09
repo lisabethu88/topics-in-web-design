@@ -7,11 +7,13 @@
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
   width: 100vw;
+  background-color: #fafaf7;
 }
 
 #root {
   height: 100vh;
   width: 100vw;
+  background-color: #fafaf7;
 }
 
 body {
@@ -47,4 +49,16 @@ h1 {
 
 h3 {
   font-size: 1.25rem !important;
+}
+
+#first-word {
+  font-size: xx-large;
+  font-weight: 800;
+}
+
+main {
+  height: fit-content;
+  min-height: 100vh;
+  padding-top: 56px;
+  padding-bottom: 121px;
 }

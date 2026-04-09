@@ -18,7 +18,7 @@ const Home = () => {
         height: "fit-content",
         justifyContent: "center",
         alignItems: "center",
-        padding: "1rem",
+        px: 1,
       }}
     >
       <Grid size={{ xs: 10, md: 6 }} m="1rem">
@@ -46,7 +46,7 @@ const Home = () => {
         src={heroImg}
         alt="Silhouette of a plus sized person and an average sized person eating at a table together"
         sx={{
-          maxWidth: 400,
+          maxWidth: 300,
           height: "auto",
           display: { xs: "none", md: "block" },
         }}
@@ -59,6 +59,7 @@ const Home = () => {
       sx={{
         width: "100%",
         height: "100%",
+        minHeight: "100vh",
         flexGrow: 1,
         backgroundColor: darkGray,
       }}

@@ -11,8 +11,14 @@ export default function SimpleBottomNavigation() {
     { label: "Community Guidelines" },
   ];
 
+  const getYear = () => {
+    const d = new Date();
+    return d.getFullYear();
+  };
+
   return (
     <Box
+      component={"footer"}
       sx={{
         width: "100%",
         display: "flex",
@@ -20,17 +26,24 @@ export default function SimpleBottomNavigation() {
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: lightYellow,
+        bottom: 130,
+        position: "relative",
+        height: 130,
       }}
     >
       <FooterLogo />
-      <Typography></Typography>
+      <Typography
+        sx={{ opacity: 0.7, fontFamily: "Alata", fontSize: "0.75rem", my: 1 }}
+      >
+        Copyright {getYear()} FatForAll, Inc
+      </Typography>
       <Container
         sx={{
           display: "flex",
           bgcolor: lightYellow,
           justifyContent: "center",
-          mb: 4,
           flexWrap: "wrap",
+          mb: 2,
         }}
       >
         {bottomNavItems.map((item) => (

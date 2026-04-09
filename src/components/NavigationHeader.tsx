@@ -16,9 +16,15 @@ import { navItemStyle } from "../styles/styles.ts";
 import { lightYellow, darkGray } from "../styles/colors.ts";
 import Logo from "./Logo.tsx";
 import MobileLogo from "./MobileLogo.tsx";
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Resources", "Community Guidelines"];
+const navItems = [
+  { label: "Home", path: "" },
+  { label: "About", path: "about" },
+  { label: "Resources", path: "resources" },
+  { label: "Community Guidelines", path: "community-guidelines" },
+];
 
 export default function DrawerAppBar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -35,11 +41,16 @@ export default function DrawerAppBar() {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem
+            key={item.label}
+            disablePadding
+            component={Link}
+            to={`/${item.path}`}
+          >
             <ListItemButton sx={{ textAlign: "center" }}>
               <ListItemText
                 sx={{ ...navItemStyle }}
-                primary={item}
+                primary={item.label}
                 slotProps={{ primary: { sx: { ...navItemStyle } } }}
               />
             </ListItemButton>
@@ -70,8 +81,13 @@ export default function DrawerAppBar() {
           </Box>
           <Box sx={{ display: { xs: "none", sm: "flex" }, flexWrap: "nowrap" }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ ...navItemStyle }}>
-                {item}
+              <Button
+                key={item.label}
+                sx={{ ...navItemStyle }}
+                component={Link}
+                to={`/${item.path}`}
+              >
+                {item.label}
               </Button>
             ))}
           </Box>

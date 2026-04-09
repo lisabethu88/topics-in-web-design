@@ -9,7 +9,7 @@ const Hero = ({ heroImg, contents }: HeroProps) => {
   return (
     <Box
       sx={{
-        minHeight: 400,
+        minHeight: 250,
         height: "fit-content",
         width: "100%",
         backgroundImage: `url(${heroImg})`,
@@ -19,8 +19,9 @@ const Hero = ({ heroImg, contents }: HeroProps) => {
         backgroundColor: "rgb(0 0 0 / 75%)",
         justifyContent: "center",
         alignContent: "center",
-        paddingTop: { xs: "75px", md: "125px" },
-        paddingBottom: { xs: "25px", md: "75px" },
+        py: 4,
+        // paddingTop: { xs: "75px", md: "125px" },
+        // paddingBottom: { xs: "25px", md: "75px" },
       }}
     >
       {contents}

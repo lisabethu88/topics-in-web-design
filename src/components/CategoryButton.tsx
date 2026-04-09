@@ -1,6 +1,7 @@
 import { darkGray, green, lightYellow } from "../styles/colors";
 import type { Category } from "../types/types";
-import { Button, Link, Typography, Box } from "@mui/material";
+import { Button, Typography, Box } from "@mui/material";
+import { Link } from "react-router";
 
 interface CategoryButtonProps {
   category: Category;
@@ -12,7 +13,7 @@ const CategoryButton = ({ category }: CategoryButtonProps) => {
   return (
     <Button
       component={Link}
-      href={link}
+      to={`/categories/${link}`}
       sx={{
         width: "100%",
         minHeight: 140,

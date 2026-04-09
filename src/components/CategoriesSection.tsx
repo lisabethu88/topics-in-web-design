@@ -14,7 +14,7 @@ const CategoriesSection = () => {
     {
       icon: <FlatwareIcon sx={iconStyle} />,
       label: "Restaurants & Bars",
-      link: "https://www.website.com",
+      link: "restaurants-and-bars",
     },
     {
       icon: <ShoppingCartIcon sx={iconStyle} />,
