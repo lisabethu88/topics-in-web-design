@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import CategoriesPage from "./pages/CategoriesPage";
 import AboutPage from "./pages/AboutPage";
 import CategoryPage from "./pages/CategoryPage";
+import BusinessPage from "./pages/BusinessPage";
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/categories" element={<CategoriesPage />} />
           <Route path="/categories/:category" element={<CategoryPage />} />
+          <Route
+            path="/categories/:category/:business"
+            element={<BusinessPage />}
+          />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

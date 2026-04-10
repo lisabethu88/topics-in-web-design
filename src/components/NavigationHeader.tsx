@@ -56,7 +56,6 @@ export default function DrawerAppBar() {
           >
             <ListItemButton sx={{ textAlign: "center" }}>
               <ListItemText
-                sx={{ ...navItemStyle }}
                 primary={item.label}
                 slotProps={{ primary: { sx: { ...navItemStyle } } }}
               />

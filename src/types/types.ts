@@ -5,3 +5,7 @@ export type Category = {
   label: string;
   link: string;
 };
+
+export type FiltersType = {
+  fatergories: string;
+};

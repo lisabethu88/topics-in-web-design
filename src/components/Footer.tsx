@@ -47,8 +47,9 @@ export default function SimpleBottomNavigation() {
           mb: 2,
         }}
       >
-        {bottomNavItems.map((item) => (
+        {bottomNavItems.map((item, index) => (
           <Link
+            key={index}
             href="#"
             sx={{ ...navItemStyle, mx: 2, textDecoration: "none" }}
           >
