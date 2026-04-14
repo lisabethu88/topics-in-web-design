@@ -53,13 +53,18 @@ const Contact = () => {
       />
 
       {/* CONTENT */}
-      <Container maxWidth="sm" sx={{ py: 5 }}>
+      <Container maxWidth="sm">
         <Typography
           sx={{
             textAlign: "center",
+            maxWidth: 700,
+            mx: "auto",
+            mt: 4,
             mb: 4,
-            fontFamily: "Alata",
-            lineHeight: 1.7,
+            px: 3,
+            py: 2,
+            backgroundColor: "rgba(0,0,0,0.04)",
+            borderRadius: 3,
           }}
         >
           Have feedback, questions, or want to suggest a business? We’d love to

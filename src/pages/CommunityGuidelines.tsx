@@ -61,9 +61,10 @@ const CommunityGuidelines = () => {
       />
 
       {/* CONTENT */}
-      <Container sx={{ maxWidth: 800, py: 5 }}>
+      <Container sx={{ maxWidth: 800, py: 2 }}>
         <Box
           sx={{
+            textAlign: "center",
             maxWidth: 700,
             mx: "auto",
             mt: 4,

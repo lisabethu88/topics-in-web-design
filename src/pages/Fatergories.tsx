@@ -7,7 +7,7 @@ import {
   Card,
   CardContent,
 } from "@mui/material";
-import { lightYellow, lavender, green, darkGreen } from "../styles/colors";
+import { lightYellow, lavender, darkGreen } from "../styles/colors";
 import { fatergoryData } from "../data/data";
 import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 
@@ -34,13 +34,18 @@ const Fatergories = () => {
       />
 
       {/* INTRO */}
-      <Container sx={{ maxWidth: 800, py: 5 }}>
+      <Container sx={{ maxWidth: 800 }}>
         <Typography
           sx={{
             textAlign: "center",
+            maxWidth: 700,
+            mx: "auto",
+            mt: 4,
             mb: 4,
-            fontFamily: "Alata",
-            lineHeight: 1.7,
+            px: 3,
+            py: 2,
+            backgroundColor: "rgba(0,0,0,0.04)",
+            borderRadius: 3,
           }}
         >
           Fatergories describe a spectrum of body sizes and lived experiences.

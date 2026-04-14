@@ -27,9 +27,10 @@ const Resources = () => {
       <Container id="resources-container">
         <Box
           sx={{
+            textAlign: "center",
             maxWidth: 700,
             mx: "auto",
-            mt: 5,
+            mt: 4,
             mb: 4,
             px: 3,
             py: 2,
