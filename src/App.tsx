@@ -11,6 +11,10 @@ import CategoriesPage from "./pages/CategoriesPage";
 import AboutPage from "./pages/AboutPage";
 import CategoryPage from "./pages/CategoryPage";
 import BusinessPage from "./pages/BusinessPage";
+import Resources from "./pages/Resources";
+import CommunityGuidelines from "./pages/CommunityGuidelines";
+import Contact from "./pages/Contact";
+import Fatergories from "./pages/Fatergories";
 
 function App() {
   return (
@@ -21,6 +25,11 @@ function App() {
           {/* Home page */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/community-guide" element={<CommunityGuidelines />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/fatergories" element={<Fatergories />} />
+
           <Route path="/categories" element={<CategoriesPage />} />
           <Route path="/categories/:category" element={<CategoryPage />} />
           <Route

@@ -16,15 +16,9 @@ import { navItemStyle } from "../styles/styles.ts";
 import { lightYellow, darkGray } from "../styles/colors.ts";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import { navItems } from "../data/data.tsx";
 
 const drawerWidth = 240;
-const navItems = [
-  { label: "Home", path: "" },
-  { label: "About", path: "about" },
-  { label: "Resources", path: "resources" },
-  { label: "Community Guidelines", path: "community-guidelines" },
-];
-
 export default function DrawerAppBar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 

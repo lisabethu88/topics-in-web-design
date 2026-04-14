@@ -3,14 +3,9 @@ import { lightYellow } from "../styles/colors";
 import { navItemStyle } from "../styles/styles";
 import { Container, Link, Typography } from "@mui/material";
 import logo from "../assets/logo.png";
+import { navItems } from "../data/data";
 
 export default function SimpleBottomNavigation() {
-  const bottomNavItems = [
-    { label: "About" },
-    { label: "Resources" },
-    { label: "Community Guidelines" },
-  ];
-
   const getYear = () => {
     const d = new Date();
     return d.getFullYear();
@@ -36,7 +31,7 @@ export default function SimpleBottomNavigation() {
       <Typography
         sx={{ opacity: 0.7, fontFamily: "Alata", fontSize: "0.75rem", my: 1 }}
       >
-        Copyright {getYear()} FatForAll, Inc
+        Copyright © {getYear()} FatForAll, Inc
       </Typography>
       <Container
         sx={{
@@ -47,10 +42,10 @@ export default function SimpleBottomNavigation() {
           mb: 2,
         }}
       >
-        {bottomNavItems.map((item, index) => (
+        {navItems.map((item, index) => (
           <Link
             key={index}
-            href="#"
+            href={`#${item.path}`}
             sx={{ ...navItemStyle, mx: 2, textDecoration: "none" }}
           >
             {item.label}

@@ -42,17 +42,17 @@ const CategoryPage = () => {
           <>
             <BusinessCard
               key={b.name}
-              img={b.img}
+              img={b.images[0]}
               name={b.name}
-              title={b.title}
+              title={b.name}
               rating={b.rating}
               location={b.location}
               numReviews={b.numReviews}
-              recentReview={b.recentReview}
+              recentReview={b.reviews[0]}
             />
             <Divider></Divider>
           </>
-        ))}
+        ))} 
       </Container>
     </Box>
   );

@@ -49,6 +49,7 @@ h1 {
 
 h3 {
   font-size: 1.25rem !important;
+  font-family: "Alata";
 }
 
 #first-word {
@@ -61,4 +62,32 @@ main {
   min-height: 100vh;
   padding-top: 56px;
   padding-bottom: 121px;
+}
+
+#card-link {
+  text-decoration: none;
+}
+
+#card-link > div {
+  transition: all 0.3s ease;
+}
+
+#card-link > div:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+  background-color: #201f1f09;
+}
+
+p,
+label,
+li,
+button,
+textarea,
+div {
+  font-family: "Alata" !important;
+}
+#resources-container h3 {
+  font-size: 2rem !important;
+  text-transform: uppercase;
+  text-align: center;
 }

@@ -15,6 +15,8 @@ import { darkGray, green } from "../styles/colors";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import type { FiltersType } from "../types/types";
 import { navItemStyle } from "../styles/styles";
+import FatergoriesTooltip from "./FatergoriesTooltip";
+import { fatergories } from "../data/data";
 
 interface FiltersProps {
   filters: FiltersType;
@@ -23,7 +25,7 @@ interface FiltersProps {
 
 const FiltersDrawer = ({ filters, setFilters }: FiltersProps) => {
   const filterOptions = {
-    fatergories: ["Infini", "Super", "Mid", "Small"],
+    fatergories: fatergories,
   };
 
   const drawerWidth = 240;
@@ -34,7 +36,7 @@ const FiltersDrawer = ({ filters, setFilters }: FiltersProps) => {
     setMobileOpen((prevState) => !prevState);
   };
   const drawer = (
-    <Box sx={{ p: 2, fontFamily: "Alata" }}>
+    <Box sx={{ p: 2 }}>
       <Typography variant="h6" sx={{ mb: 2, fontFamily: "Alata" }}>
         Filters
       </Typography>
@@ -42,7 +44,7 @@ const FiltersDrawer = ({ filters, setFilters }: FiltersProps) => {
       <Divider sx={{ mb: 2 }} />
       {/* FATERGORIES FILTER */}
       <Typography variant="subtitle1" fontFamily={"Alata"} fontSize={"larger"}>
-        Fatergories
+        Fatergories <FatergoriesTooltip />
       </Typography>
       <List>
         {filterOptions.fatergories.map((option) => (
@@ -86,12 +88,13 @@ const FiltersDrawer = ({ filters, setFilters }: FiltersProps) => {
         <IconButton
           aria-label="open filters"
           onClick={handleDrawerToggle}
-          sx={{ color: darkGray, borderRadius: 10 }}
+          sx={{ color: darkGray, borderRadius: 5, mx: 2 }}
         >
-          <FilterListIcon />
+          <FilterListIcon />{" "}
+          <Typography sx={{ fontFamily: "Alata", fontSize: "1.5rem", ml: 1 }}>
+            Filters
+          </Typography>
         </IconButton>
-
-        <Typography sx={{ fontFamily: "Alata" }}>Filters</Typography>
       </Box>
       <Drawer
         variant="temporary"

@@ -4,8 +4,9 @@ import type { ReactNode } from "react";
 interface HeroProps {
   heroImg: string;
   contents: ReactNode; // component or components that will go on the hero
+  bgPos?: string;
 }
-const Hero = ({ heroImg, contents }: HeroProps) => {
+const Hero = ({ heroImg, contents, bgPos = "center" }: HeroProps) => {
   return (
     <Box
       sx={{
@@ -14,14 +15,12 @@ const Hero = ({ heroImg, contents }: HeroProps) => {
         width: "100%",
         backgroundImage: `url(${heroImg})`,
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: bgPos,
         backgroundBlendMode: "darken",
         backgroundColor: "rgb(0 0 0 / 75%)",
         justifyContent: "center",
         alignContent: "center",
         py: 4,
-        // paddingTop: { xs: "75px", md: "125px" },
-        // paddingBottom: { xs: "25px", md: "75px" },
       }}
     >
       {contents}

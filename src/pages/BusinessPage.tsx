@@ -1,38 +1,27 @@
 import { useParams } from "react-router-dom";
 import Hero from "../components/Hero";
 import heroImg from "../assets/pexels-tiffanya-10575037.jpg";
-import { Box, Typography, Card, CardContent, Divider } from "@mui/material";
-import { lightYellow, darkGray } from "../styles/colors";
-import { categories } from "../data/data";
-
-// Example mock data (replace with API or real dataset later)
-const businesses = [
-  {
-    name: "Blue Pointe",
-    description:
-      "Upscale seafood restaurant with waterfront views and seasonal menus.",
-    rating: 4.5,
-    price: "$$$",
-    address: "123 Waterfront Ave, NY",
-  },
-];
+import { Box, Typography, Divider, Avatar, Button } from "@mui/material";
+import { green, lightYellow } from "../styles/colors";
+import yelpLogo from "../assets/Yelp_Logo.svg.png";
+import StarRating from "../components/StarRating";
+import { businesses } from "../data/data";
+import type { RatingBreakdown } from "../types/types";
+import ReviewModal from "../components/ReviewModal";
+import { useState } from "react";
+import FatergoriesTooltip from "../components/FatergoriesTooltip";
 
 const BusinessPage = () => {
-  const { category, business } = useParams<{
-    category: string;
-    business: string;
-  }>();
-
-  // Decode URL
+  const [open, setOpen] = useState(false);
+  const ratingsMap: { label: string; key: keyof RatingBreakdown }[] = [
+    { label: "Seating", key: "seating" },
+    { label: "Bathrooms", key: "bathrooms" },
+    { label: "Accessibility", key: "accessibility" },
+    { label: "Staff Treatment", key: "staffTreatment" },
+  ];
+  const { business } = useParams();
   const businessName = business ? decodeURIComponent(business) : "";
 
-  // Find category label
-  const match = categories.find(
-    (c) => c.link.toLowerCase() === category?.toLowerCase(),
-  );
-  const categoryLabel = match?.label || "Category not found";
-
-  // Find business data
   const businessData = businesses.find(
     (b) => b.name.toLowerCase() === businessName.toLowerCase(),
   );
@@ -41,71 +30,152 @@ const BusinessPage = () => {
     <Box>
       {/* HERO */}
       <Hero
-        heroImg={heroImg}
+        heroImg={businessData?.images[0] || heroImg}
         contents={
-          <Box sx={{ textAlign: "center" }}>
-            <Typography
-              sx={{
-                fontSize: "2.5rem",
-                color: lightYellow,
-                fontFamily: "Alata",
-              }}
-            >
-              {businessName}
-            </Typography>
-
-            <Typography
-              sx={{
-                color: lightYellow,
-                fontFamily: "Alata",
-                opacity: 0.9,
-              }}
-            >
-              {categoryLabel}
-            </Typography>
-          </Box>
+          <Typography
+            sx={{
+              fontSize: "3rem",
+              color: lightYellow,
+              fontFamily: "Alata",
+              textAlign: "center",
+            }}
+          >
+            {businessName}
+          </Typography>
         }
       />
 
-      {/* CONTENT */}
-      <Box sx={{ p: 3, display: "flex", justifyContent: "center" }}>
-        <Card
+      {/* MAIN CONTENT */}
+      <Box sx={{ maxWidth: 800, mx: "auto", p: 3 }}>
+        {/* PHOTOS */}
+        <Typography variant="h5" sx={{ mb: 2, fontFamily: "Alata" }}>
+          Photos
+        </Typography>
+
+        <Box sx={{ display: "flex", gap: 3 }}>
+          {businessData?.images.map((img, i) => (
+            <Box key={i} sx={{ textAlign: "center" }}>
+              <Box
+                component="img"
+                src={img}
+                sx={{
+                  width: 140,
+                  height: 140,
+                  borderRadius: 3,
+                  objectFit: "cover",
+                }}
+              />
+              <Typography sx={{ mt: 1 }}>
+                {i === 0 ? "Inside (2)" : "Outside (1)"}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
+
+        <Divider sx={{ my: 3 }} />
+
+        {/* RATINGS */}
+        <Typography variant="h5" sx={{ mb: 2, fontFamily: "Alata" }}>
+          Ratings{" "}
+        </Typography>
+
+        {ratingsMap.map(({ label, key }) => (
+          <Box key={key} sx={{ mb: 2 }}>
+            <Typography>{label}</Typography>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <StarRating value={businessData?.ratingBreakdown?.[key] || 0} />
+              <Typography
+                variant="body2"
+                sx={{ fontFamily: "Alata", opacity: 0.7, ml: 1 }}
+              >
+                ({businessData?.ratingBreakdown?.[key] || 0})
+              </Typography>
+            </Box>
+          </Box>
+        ))}
+
+        <Divider sx={{ my: 3 }} />
+
+        <Box
           sx={{
-            width: "100%",
-            maxWidth: 700,
-            bgcolor: lightYellow,
-            borderRadius: 3,
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            mb: 2,
           }}
-          elevation={0}
         >
-          <CardContent>
-            <Typography
-              variant="h5"
-              sx={{ fontFamily: "Alata", color: darkGray }}
-            >
-              {businessData?.name || businessName}
-            </Typography>
+          {/* REVIEWS */}
+          <Typography variant="h5" sx={{ mb: 2, fontFamily: "Alata" }}>
+            Reviews ({businessData?.reviews.length || 0})
+          </Typography>
+          <Button
+            variant="contained"
+            onClick={() => setOpen(true)}
+            sx={{
+              backgroundColor: green,
+              borderRadius: 5,
+              textTransform: "none",
+              fontSize: "1.2rem",
+              px: 3,
+              fontFamily: "Alata",
+            }}
+          >
+            Write a Review
+          </Button>
+        </Box>
 
-            <Typography sx={{ mt: 1, color: darkGray }}>
-              {businessData?.description || "No description available."}
-            </Typography>
+        {businessData?.reviews.map((review) => (
+          <Box key={review.id} sx={{ display: "flex", gap: 2, mb: 3 }}>
+            <Avatar />
 
-            <Divider sx={{ my: 2 }} />
+            <Box>
+              <Typography sx={{ fontWeight: "bold" }}>
+                {review.author} {/* optional: show body size */}
+                {review.bodySize && (
+                  <Typography sx={{ fontSize: "0.8rem", opacity: 0.7 }}>
+                    {review.bodySize} <FatergoriesTooltip />
+                  </Typography>
+                )}
+              </Typography>
 
-            <Typography sx={{ fontFamily: "Alata" }}>
-              ⭐ Rating: {businessData?.rating ?? "N/A"}
-            </Typography>
+              <StarRating value={review.rating} />
 
-            <Typography sx={{ fontFamily: "Alata" }}>
-              💲 Price: {businessData?.price ?? "N/A"}
-            </Typography>
+              <Typography sx={{ mt: 1 }}>{review.comment}</Typography>
+            </Box>
+          </Box>
+        ))}
 
-            <Typography sx={{ fontFamily: "Alata", mt: 1 }}>
-              📍 {businessData?.address ?? "Address not available"}
-            </Typography>
-          </CardContent>
-        </Card>
+        <Divider sx={{ my: 3 }} />
+
+        {/* CTA BUTTON */}
+        <Button
+          variant="contained"
+          sx={{
+            backgroundColor: "red",
+            borderRadius: 5,
+            textTransform: "none",
+            fontSize: "1.2rem",
+            px: 3,
+            fontFamily: "Alata",
+          }}
+        >
+          See on
+          <Box
+            component="img"
+            sx={{ width: "auto", height: 30, ml: 1 }}
+            src={yelpLogo}
+          ></Box>
+        </Button>
       </Box>
+      <ReviewModal
+        open={open}
+        onClose={() => setOpen(false)}
+        onSubmit={(newReview) => {
+          console.log("New Review:", newReview);
+
+          // later: update state or send to backend
+        }}
+      />
     </Box>
   );
 };
