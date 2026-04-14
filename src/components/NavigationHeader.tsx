@@ -33,7 +33,7 @@ export default function DrawerAppBar() {
         src={logo}
         sx={{
           width: 150,
-          display: { xs: "block", sm: "none" },
+          display: { xs: "block", md: "none" },
           paddingY: 1,
           margin: "0 auto",
         }}
@@ -72,18 +72,18 @@ export default function DrawerAppBar() {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" }, color: darkGray }}
+            sx={{ mr: 2, display: { md: "none" }, color: darkGray }}
           >
             <MenuIcon />
           </IconButton>
           <Box
             component={"img"}
             src={logo}
-            sx={{ width: 200, display: { xs: "none", sm: "block" } }}
+            sx={{ width: 200, display: { xs: "none", md: "block" } }}
             alt="Fat For All"
           />
 
-          <Box sx={{ display: { xs: "none", sm: "flex" }, flexWrap: "nowrap" }}>
+          <Box sx={{ display: { xs: "none", md: "flex" }, flexWrap: "nowrap" }}>
             {navItems.map((item) => (
               <Button
                 key={item.label}
@@ -106,7 +106,7 @@ export default function DrawerAppBar() {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", sm: "none" },
+            display: { xs: "block", md: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
