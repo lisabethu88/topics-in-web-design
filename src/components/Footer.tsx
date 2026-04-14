@@ -21,9 +21,9 @@ export default function SimpleBottomNavigation() {
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: lightYellow,
-        bottom: 130,
+        bottom: 150,
         position: "relative",
-        height: 130,
+        height: 150,
       }}
     >
       <Box component={"img"} src={logo} sx={{ width: 150 }} alt="Fat For All" />
