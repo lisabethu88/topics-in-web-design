@@ -7,11 +7,10 @@ import { Link } from "react-router-dom";
 import StarRating from "./StarRating";
 import LocationPinIcon from "@mui/icons-material/LocationPin";
 import CommentIcon from "@mui/icons-material/Comment";
-import type { Review } from "../types/types";
+import type { businessImgType, Review } from "../types/types";
 interface BusinessCardProps {
-  img: string;
+  img: businessImgType;
   name: string;
-  title: string;
   rating: number;
   location: string;
   numReviews: number;
@@ -20,7 +19,6 @@ interface BusinessCardProps {
 export default function BusinessCard({
   img,
   name,
-  title,
   rating,
   location,
   numReviews,
@@ -41,8 +39,8 @@ export default function BusinessCard({
       >
         <CardMedia
           sx={{ height: 140, width: 140, borderRadius: 5 }}
-          image={img}
-          title={title} // alt
+          image={img.img}
+          title={img.alt} // alt
         />
         <CardContent>
           <Typography

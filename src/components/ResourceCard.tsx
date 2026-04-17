@@ -3,14 +3,9 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, Button } from "@mui/material";
-import { darkGray, lavender, lightYellow } from "../styles/colors";
+import { darkGray, darkGreen, lightYellow } from "../styles/colors";
+import type { Resource } from "../types/types";
 
-interface Resource {
-  title: string;
-  description: string;
-  link: string;
-  image: string;
-}
 
 interface ResourceCardProps {
   resource: Resource;
@@ -34,7 +29,7 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
       <CardMedia
         component="img"
         image={resource.image}
-        alt={resource.title}
+        alt={resource.alt}
         sx={{
           height: 140,
           width: 140,
@@ -45,7 +40,7 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
 
       {/* CONTENT */}
       <CardContent sx={{ flex: 1 }}>
-        <Typography variant="h5" sx={{ fontFamily: "Alata", mb: 1 }}>
+        <Typography variant="h3" sx={{ fontFamily: "Alata", mb: 1 }}>
           {resource.title}
         </Typography>
 
@@ -67,7 +62,7 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
               textTransform: "none",
               borderRadius: 5,
               fontFamily: "Alata",
-              backgroundColor: lavender,
+              backgroundColor: darkGreen,
             }}
           >
             Learn More

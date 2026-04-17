@@ -2,12 +2,12 @@ import { Box, Container, Divider, Typography } from "@mui/material";
 import Hero from "../components/Hero";
 import heroImg from "../assets/pexels-tiffanya-10575037.jpg";
 import { businesses, categories } from "../data/data";
-import { lightYellow } from "../styles/colors";
 import { useParams } from "react-router-dom";
 import FiltersDrawer from "../components/FiltersDrawer";
 import type { FiltersType } from "../types/types";
 import React from "react";
 import BusinessCard from "../components/BusinessCard";
+import { h1Style } from "../styles/styles";
 
 const CategoryPage = () => {
   const [filters, setFilters] = React.useState<FiltersType>({
@@ -24,14 +24,7 @@ const CategoryPage = () => {
       <Hero
         heroImg={heroImg}
         contents={
-          <Typography
-            sx={{
-              fontSize: "3rem",
-              color: lightYellow,
-              fontFamily: "Alata",
-              textAlign: "center",
-            }}
-          >
+          <Typography variant="h1" sx={h1Style}>
             {label}
           </Typography>
         }
@@ -44,7 +37,6 @@ const CategoryPage = () => {
               key={b.name}
               img={b.images[0]}
               name={b.name}
-              title={b.name}
               rating={b.rating}
               location={b.location}
               numReviews={b.numReviews}
@@ -52,7 +44,7 @@ const CategoryPage = () => {
             />
             <Divider></Divider>
           </>
-        ))} 
+        ))}
       </Container>
     </Box>
   );

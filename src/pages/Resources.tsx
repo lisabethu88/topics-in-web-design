@@ -1,19 +1,12 @@
 import Hero from "../components/Hero";
 import Typography from "@mui/material/Typography";
-import { lightYellow } from "../styles/colors";
 import { Box, Container, Divider } from "@mui/material";
 import ResourceCard from "../components/ResourceCard";
 import { books, studies, advocacy, articlesBlogs } from "../data/data";
+import { h1Style } from "../styles/styles";
 const Resources = () => {
   const content = (
-    <Typography
-      sx={{
-        fontSize: "4rem",
-        color: lightYellow,
-        fontFamily: "Alata",
-        textAlign: "center",
-      }}
-    >
+    <Typography variant="h1" sx={h1Style}>
       Resources
     </Typography>
   );
@@ -51,22 +44,22 @@ const Resources = () => {
             fat-friendly living and advocacy.
           </Typography>
         </Box>
-        <h3>Articles/Blogs</h3>
+        <h2>Articles/Blogs</h2>
         {articlesBlogs.map((resource) => (
           <ResourceCard resource={resource}></ResourceCard>
         ))}{" "}
         <Divider />
-        <h3>Studies</h3>
+        <h2>Studies</h2>
         {studies.map((resource) => (
           <ResourceCard resource={resource}></ResourceCard>
         ))}
         <Divider />
-        <h3>Books</h3>
+        <h2>Books</h2>
         {books.map((resource) => (
           <ResourceCard resource={resource}></ResourceCard>
         ))}
         <Divider />
-        <h3>Advocacy</h3>
+        <h2>Advocacy</h2>
         {advocacy.map((resource) => (
           <ResourceCard resource={resource}></ResourceCard>
         ))}

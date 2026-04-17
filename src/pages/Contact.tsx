@@ -1,14 +1,7 @@
 import Hero from "../components/Hero";
-import {
-  Box,
-  Container,
-  Typography,
-  TextField,
-  Button,
-  MenuItem,
-} from "@mui/material";
-import { lightYellow, green } from "../styles/colors";
+import { Box, Container, Typography } from "@mui/material";
 import { useState } from "react";
+import { h1Style } from "../styles/styles";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -39,14 +32,7 @@ const Contact = () => {
         }
         bgPos={"bottom"}
         contents={
-          <Typography
-            sx={{
-              fontSize: "3rem",
-              color: lightYellow,
-              fontFamily: "Alata",
-              textAlign: "center",
-            }}
-          >
+          <Typography variant="h1" sx={h1Style}>
             Contact Us
           </Typography>
         }
@@ -72,59 +58,58 @@ const Contact = () => {
         </Typography>
 
         {/* FORM */}
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-          <TextField
-            label="Name"
-            fullWidth
+        <Box
+          component="form"
+          sx={{ display: "flex", flexDirection: "column", gap: 3 }}
+          onSubmit={handleSubmit}
+          className="contact-form"
+        >
+          {/* NAME */}
+          <label htmlFor="name">Name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
             value={form.name}
             onChange={(e) => handleChange("name", e.target.value)}
           />
 
-          <TextField
-            label="Email"
+          {/* EMAIL */}
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            name="email"
             type="email"
-            fullWidth
             value={form.email}
             onChange={(e) => handleChange("email", e.target.value)}
           />
 
-          {/* TOPIC SELECT */}
-          <TextField
-            select
-            label="What can we help you with?"
-            fullWidth
+          {/* TOPIC */}
+          <label htmlFor="topic">What can we help you with?</label>
+          <select
+            id="topic"
+            name="topic"
             value={form.topic}
             onChange={(e) => handleChange("topic", e.target.value)}
           >
-            <MenuItem value="feedback">General Feedback</MenuItem>
-            <MenuItem value="business">Suggest a Business</MenuItem>
-            <MenuItem value="report">Report a Concern</MenuItem>
-            <MenuItem value="other">Other</MenuItem>
-          </TextField>
+            <option value="feedback">General Feedback</option>
+            <option value="business">Suggest a Business</option>
+            <option value="report">Report a Concern</option>
+            <option value="other">Other</option>
+          </select>
 
-          <TextField
-            label="Message"
-            multiline
-            rows={4}
-            fullWidth
+          {/* MESSAGE */}
+          <label htmlFor="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows={5}
             value={form.message}
             onChange={(e) => handleChange("message", e.target.value)}
           />
 
-          <Button
-            variant="contained"
-            onClick={handleSubmit}
-            sx={{
-              backgroundColor: green,
-              borderRadius: 5,
-              textTransform: "none",
-              fontSize: "1.1rem",
-              fontFamily: "Alata",
-              py: 1.5,
-            }}
-          >
-            Send Message
-          </Button>
+          {/* BUTTON */}
+          <button type="submit">Send Message</button>
         </Box>
       </Container>
     </Box>

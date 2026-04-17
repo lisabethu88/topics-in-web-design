@@ -4,15 +4,11 @@ import {
   DialogContent,
   DialogActions,
   Button,
-  TextField,
-  Typography,
-  Box,
-  MenuItem,
   Rating,
 } from "@mui/material";
 import { useState } from "react";
 import type { Review, BodySizeCategory, RatingBreakdown } from "../types/types";
-import { green, lavender } from "../styles/colors";
+import { darkGreen, lavender } from "../styles/colors";
 import FatergoriesTooltip from "./FatergoriesTooltip";
 
 interface Props {
@@ -59,42 +55,50 @@ const ReviewModal = ({ open, onClose, onSubmit }: Props) => {
   return (
     <Dialog open={open} onClose={onClose} fullWidth maxWidth="sm">
       <DialogTitle sx={{ fontFamily: "Alata" }}>Write a Review</DialogTitle>
-
       <DialogContent>
         {/* Name */}
-        <Typography sx={{ mr: 1 }}>Name</Typography>
-        <TextField
-          fullWidth
+        <label htmlFor="author">Name</label>
+        <input
+          id="author"
+          type="text"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
 
         {/* Body Size */}
-        <Box sx={{ display: "flex", alignItems: "center", mt: 2 }}>
-          <Typography sx={{ mr: 1 }}>Body Size</Typography>
+        <div
+          style={{ display: "flex", alignItems: "center", marginTop: "14px" }}
+        >
+          <label htmlFor="bodySize" style={{ marginRight: "8px" }}>
+            Body Size
+          </label>
           <FatergoriesTooltip />
-        </Box>
-        <TextField
-          select
-          fullWidth
-          label={"Select"}
+        </div>
+
+        <select
+          id="bodySize"
           value={bodySize}
           onChange={(e) => setBodySize(e.target.value as BodySizeCategory)}
         >
-          <MenuItem value="smallfat">Small Fat</MenuItem>
-          <MenuItem value="midfat">Mid Fat</MenuItem>
-          <MenuItem value="superfat">Superfat</MenuItem>
-          <MenuItem value="infinifat">Infinifat</MenuItem>
-        </TextField>
+          <option value="">Select</option>
+          <option value="smallfat">Small Fat</option>
+          <option value="midfat">Mid Fat</option>
+          <option value="superfat">Superfat</option>
+          <option value="infinifat">Infinifat</option>
+        </select>
+
         {/* Overall Rating */}
-        <Box sx={{ mt: 3 }}>
-          <Typography>Overall Rating</Typography>
+        <fieldset style={{ marginTop: "14px", border: "none", padding: 0 }}>
+          <legend style={{ fontWeight: 500, marginBottom: "6px" }}>
+            Overall Rating
+          </legend>
+
           <Rating
             value={rating}
             onChange={(_, newValue) => setRating(newValue)}
             sx={{ color: lavender }}
           />
-        </Box>
+        </fieldset>
 
         {/* Breakdown Ratings */}
         {[
@@ -103,39 +107,48 @@ const ReviewModal = ({ open, onClose, onSubmit }: Props) => {
           { label: "Accessibility", key: "accessibility" },
           { label: "Staff Treatment", key: "staffTreatment" },
         ].map(({ label, key }) => (
-          <Box key={key} sx={{ mt: 2 }}>
-            <Typography>{label}</Typography>
+          <fieldset
+            key={key}
+            style={{ marginTop: "14px", border: "none", padding: 0 }}
+          >
+            <legend style={{ fontWeight: 500, marginBottom: "6px" }}>
+              {label}
+            </legend>
+
             <Rating
               value={breakdown[key as keyof RatingBreakdown]}
               onChange={(_, value) => handleBreakdownChange(key, value)}
               sx={{ color: lavender }}
             />
-          </Box>
+          </fieldset>
         ))}
 
+        <br />
         {/* Comment */}
-        <TextField
-          fullWidth
-          multiline
+        <label htmlFor="comment" style={{ marginTop: "14px" }}>
+          Your Experience
+        </label>
+        <textarea
+          id="comment"
           rows={4}
-          label="Your Experience"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
-          sx={{ mt: 3 }}
         />
       </DialogContent>
-
       <DialogActions>
-        <Button onClick={onClose} sx={{ color: green }}>
-          Cancel
-        </Button>
+        {" "}
+        <Button onClick={onClose} sx={{ color: darkGreen }}>
+          {" "}
+          Cancel{" "}
+        </Button>{" "}
         <Button
           variant="contained"
           onClick={handleSubmit}
-          sx={{ backgroundColor: green }}
+          sx={{ backgroundColor: darkGreen }}
         >
-          Submit
-        </Button>
+          {" "}
+          Submit{" "}
+        </Button>{" "}
       </DialogActions>
     </Dialog>
   );

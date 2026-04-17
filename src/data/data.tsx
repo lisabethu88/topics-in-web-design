@@ -53,10 +53,17 @@ export const businesses: Business[] = [
     location: "Newburgh, NY",
     address: "27 Front St, Newburgh, NY",
 
-    heroImage: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
+    heroImage:
+      "https://images.squarespace-cdn.com/content/v1/5c069552c3c16a9afa40d4e4/1564169932943-CFB1I2PBCZZP25XZW2B3/VISIT.jpg?format=2500w",
     images: [
-      "https://images.unsplash.com/photo-1552566626-52f8b828add9",
-      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe",
+      {
+        img: "https://images.squarespace-cdn.com/content/v1/5c069552c3c16a9afa40d4e4/1564169932943-CFB1I2PBCZZP25XZW2B3/VISIT.jpg?format=2500w",
+        alt: "Interior of Hudson Taco restaurant with booths, view of Hudson River, and brick walls",
+      },
+      {
+        img: "https://s3-media0.fl.yelpcdn.com/bphoto/uKChqmWMeOUeY0ZeTwo3tA/258s.jpg",
+        alt: "Outdoor seating with red umbrellas and dark picnic tables",
+      },
     ],
 
     rating: 4.2,
@@ -128,10 +135,17 @@ export const businesses: Business[] = [
     location: "Newburgh, NY",
     address: "105 Liberty St, Newburgh, NY",
 
-    heroImage: "https://images.unsplash.com/photo-1559339352-11d035aa65de",
+    heroImage:
+      "https://s3-media0.fl.yelpcdn.com/bphoto/999XegrEdhMowPLx1eCJqg/348s.jpg",
     images: [
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+      {
+        img: "https://s3-media0.fl.yelpcdn.com/bphoto/999XegrEdhMowPLx1eCJqg/348s.jpg",
+        alt: "Interior of Ms. Fairfax with hanging lamps and people seated at half booths",
+      },
+      {
+        img: "https://images.happycow.net/venues/500/31/45/hcmp314563_3103375.jpeg",
+        alt: "Exterior of Ms. Fairfax with green painted walls and large windows",
+      },
     ],
 
     rating: 3.8,
@@ -191,8 +205,14 @@ export const businesses: Business[] = [
 
     heroImage: "https://images.unsplash.com/photo-1544148103-0773bf10d330",
     images: [
-      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe",
-      "https://images.unsplash.com/photo-1528605248644-14dd04022da1",
+      {
+        img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/2e/03/75/bar-area.jpg?w=1400&h=-1&s=1",
+        alt: "Interior of Cosimos where people are eating on stools at a bar",
+      },
+      {
+        img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/2e/03/09/exterior-seating.jpg?w=1400&h=-1&s=1",
+        alt: "Exterior of Cosimos where people are eating under a covering",
+      },
     ],
 
     rating: 4.7,
@@ -271,6 +291,7 @@ export const studies: Resource[] = [
       'University of Indiana study that creates a clinical environmental checklist “with an aim to identify weaknesses in accommodating individuals of size"',
     link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11372463/",
     image: "https://images.unsplash.com/photo-1579037005241-a79202c7e9fd",
+    alt: "Ambulance",
   },
   {
     link: "https://pubmed.ncbi.nlm.nih.gov/32127716/",
@@ -280,6 +301,7 @@ export const studies: Resource[] = [
       "Joint International Consensus Statement for Ending Stigma of Obesity",
     image:
       "https://today.uconn.edu/wp-content/uploads/2021/06/AdobeStock_153848376-951x665.jpeg",
+    alt: "Hands pointing in judgement at a plus size woman",
   },
 ];
 export const advocacy: Resource[] = [
@@ -290,6 +312,7 @@ export const advocacy: Resource[] = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSApg57AnqyjbwiX7l6K0IPorHJrYG3Zc8EZg&s",
     link: "https://naafa.org/",
+    alt: "NAAFA logo",
   },
 ];
 export const articlesBlogs: Resource[] = [
@@ -299,6 +322,7 @@ export const articlesBlogs: Resource[] = [
     link: "https://fluffykittenparty.com/2021/06/01/fategories-understanding-smallfat-fragility-the-fat-spectrum/",
     image:
       "https://fluffykittenparty.com/wp-content/uploads/2019/10/8-april-international-feng-shui-awareness-day.png",
+    alt: "“The Fat Spectrum” graphic with an arrow from small to larger bodies showing increasing barriers.",
   },
   {
     title:
@@ -308,6 +332,7 @@ export const articlesBlogs: Resource[] = [
     link: "https://www.huffpost.com/entry/restaurants-can-suck-if-youre-large-diners-reveal-how-to-hack-the-anxiety-of-eating-out_l_651723ace4b0a69113b4c97b",
     image:
       "https://img.huffingtonpost.com/asset/651c78d52200003200e3db2f.jpeg?ops=scalefit_1440&format=webp",
+    alt: "Restaurant booth",
   },
   {
     title: "Weight stigma: As harmful as obesity itself?",
@@ -316,6 +341,7 @@ export const articlesBlogs: Resource[] = [
     image:
       "http://content.health.harvard.edu/wp-content/uploads/2023/04/098774ad-7bdb-4e47-ad72-2f541e1b775c.jpg",
     link: "https://www.health.harvard.edu/blog/weight-stigma-as-harmful-as-obesity-itself-202206022755",
+    alt: "Person on a scale looking distressed as others send mixed positive and negative phone comments.",
   },
   {
     link: "https://www.nyc.gov/site/cchr/media/height-and-weight.page",
@@ -325,6 +351,7 @@ export const articlesBlogs: Resource[] = [
       "https://www.nyc.gov/assets/cchr/images/content/pages/HeightWeight_WebGraphic.png",
     description:
       "'This page focuses on the height and weight provisions of the NYCHRL, which were signed into Law by Mayor Eric Adams on May 26, 2023, and took effect on November 26, 2023.'",
+    alt: "Diverse people of different body sizes working together under “Different Bodies Same Rights.”",
   },
 ];
 
@@ -335,6 +362,7 @@ export const books: Resource[] = [
     description:
       "'The Body Is Not an Apology offers radical self-love as the balm to heal the wounds inflicted by these violent systems.'",
     link: "https://www.sonyareneetaylor.com/the-body-is-not-an-apology",
+    alt: "The Body Is Not an Apology cover showing a nude plus-size Black woman on yellow.",
   },
   {
     title:
@@ -343,6 +371,7 @@ export const books: Resource[] = [
       "'An important and original work, Fearing the Black Body argues convincingly that fat phobia isn’t about health at all, but rather a means of using the body to validate race, class, and gender prejudice.'",
     image: "https://m.media-amazon.com/images/I/81-DAuYt+9L._SL1500_.jpg",
     link: "https://www.amazon.com/Fearing-Black-Body-Racial-Origins/dp/1479886750/ref=sr_1_1?crid=1YYZ7PSYTZJAL&dib=eyJ2IjoiMSJ9._xycuRI7p3GO-i2dCn6tqL1labwLHjjrLoXVS3golgtxBGAUu8lpzwkv-EqzUy9gxGD9zK2goTsSgTAP55wcSI5cphCDLGmw1Z-4TMk9pIsrhBi-D8Nv1pyMh8qGqvIpUslALeP9zrWlQ_qqgm5kZ6PomDshG4KqzZGpJhkNNAffmnL5vu5610opic3tV1KycnU5qHcV6hdUuhXSUkeLyI0v7xj670AFtXcN1pe_vwc.2xjCbPOyBczhqbbg6Gw3jJxxVfHKRf4X_GPp1PC-3-0&dib_tag=se&keywords=fearing+the+black+body&qid=1776096162&s=books&sprefix=fearing+the+black+body%2Cstripbooks%2C109&sr=1-1",
+    alt: "Fearing the Black Body cover showing a Black woman in a historical display scene.",
   },
 ];
 

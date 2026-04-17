@@ -11,10 +11,10 @@ import {
 } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import React from "react";
-import { darkGray, green } from "../styles/colors";
+import { darkGray, darkGreen } from "../styles/colors";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import type { FiltersType } from "../types/types";
-import { navItemStyle } from "../styles/styles";
+import { h2Style, navItemStyle } from "../styles/styles";
 import FatergoriesTooltip from "./FatergoriesTooltip";
 import { fatergories } from "../data/data";
 
@@ -37,13 +37,13 @@ const FiltersDrawer = ({ filters, setFilters }: FiltersProps) => {
   };
   const drawer = (
     <Box sx={{ p: 2 }}>
-      <Typography variant="h6" sx={{ mb: 2, fontFamily: "Alata" }}>
+      <Typography variant="h2" sx={h2Style}>
         Filters
       </Typography>
 
       <Divider sx={{ mb: 2 }} />
       {/* FATERGORIES FILTER */}
-      <Typography variant="subtitle1" fontFamily={"Alata"} fontSize={"larger"}>
+      <Typography variant="h2" fontFamily={"Alata"} fontSize={"larger"}>
         Fatergories <FatergoriesTooltip />
       </Typography>
       <List>
@@ -71,7 +71,11 @@ const FiltersDrawer = ({ filters, setFilters }: FiltersProps) => {
 
       <Button
         variant="contained"
-        sx={{ backgroundColor: green, fontFamily: "Alata", letterSpacing: 1 }}
+        sx={{
+          backgroundColor: darkGreen,
+          fontFamily: "Alata",
+          letterSpacing: 1,
+        }}
         fullWidth
         onClick={() => {
           console.log("Applied filters:", filters);
@@ -91,7 +95,10 @@ const FiltersDrawer = ({ filters, setFilters }: FiltersProps) => {
           sx={{ color: darkGray, borderRadius: 5, mx: 2 }}
         >
           <FilterListIcon />{" "}
-          <Typography sx={{ fontFamily: "Alata", fontSize: "1.5rem", ml: 1 }}>
+          <Typography
+            variant="h2"
+            sx={{ fontFamily: "Alata", fontSize: "1.5rem", ml: 1 }}
+          >
             Filters
           </Typography>
         </IconButton>

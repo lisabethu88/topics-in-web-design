@@ -2,18 +2,14 @@ import Hero from "../components/Hero";
 import heroImg from "../assets/pexels-rbrigant44-6439084.jpg";
 import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import { lightYellow } from "../styles/colors";
 import selfie from "../assets/9C18874C-AC52-4E07-A9EB-816A2D824165_1_105_c.jpeg";
+import { h1Style } from "../styles/styles";
 
 const AboutPage = () => {
   const content = (
     <Typography
-      sx={{
-        fontSize: "4rem",
-        color: lightYellow,
-        fontFamily: "Alata",
-        textAlign: "center",
-      }}
+      variant="h1"
+      sx={h1Style}
     >
       About
     </Typography>
@@ -39,6 +35,7 @@ const AboutPage = () => {
           {/* Image */}
           <Grid size={{ xs: 12, md: 6 }}>
             <Box
+              alt="Plus size woman standing on top of a hill"
               component="img"
               src={selfie}
               sx={{

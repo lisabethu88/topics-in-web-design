@@ -45,7 +45,7 @@ export interface Business {
 
   // Media
   heroImage?: string;
-  images: string[];
+  images: businessImgType[];
 
   // Ratings
   rating: number;
@@ -69,4 +69,10 @@ export interface Resource {
   description: string;
   link: string;
   image: string;
+  alt: string;
+}
+
+export interface businessImgType {
+  img: string;
+  alt: string;
 }

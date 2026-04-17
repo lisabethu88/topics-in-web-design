@@ -23,6 +23,7 @@ const Home = () => {
     >
       <Grid size={{ xs: 10, md: 6 }} m="1rem">
         <Typography
+          variant="h1"
           sx={{
             fontSize: { xs: "1.5rem", sm: "2rem" },
             maxWidth: 800,

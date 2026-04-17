@@ -1,6 +1,6 @@
 import Hero from "../components/Hero";
 import { Box, Container, Typography, Divider } from "@mui/material";
-import { lightYellow } from "../styles/colors";
+import { h1Style } from "../styles/styles";
 
 const sections = [
   {
@@ -47,21 +47,14 @@ const CommunityGuidelines = () => {
       <Hero
         heroImg={"https://images.unsplash.com/photo-1565128398554-b46618954275"}
         contents={
-          <Typography
-            sx={{
-              fontSize: "3rem",
-              color: lightYellow,
-              fontFamily: "Alata",
-              textAlign: "center",
-            }}
-          >
+          <Typography variant="h1" sx={h1Style}>
             Community Guidelines
           </Typography>
         }
       />
 
       {/* CONTENT */}
-      <Container sx={{ maxWidth: 800, py: 2 }}>
+      <Container sx={{ maxWidth: 800, py: 2 }} id="community-page">
         <Box
           sx={{
             textAlign: "center",
@@ -92,7 +85,7 @@ const CommunityGuidelines = () => {
 
         {sections.map((section, index) => (
           <Box key={index} sx={{ mb: 4 }}>
-            <Typography variant="h6" sx={{ fontFamily: "Alata", mb: 1 }}>
+            <Typography variant="h2" sx={{ fontFamily: "Alata", mb: 1 }}>
               {section.title}
             </Typography>
 

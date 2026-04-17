@@ -1,4 +1,4 @@
-import { darkGray } from "./colors";
+import { darkGray, lightYellow } from "./colors";
 
 export const navItemStyle = {
   fontFamily: "'Alata', sans-serif",
@@ -19,4 +19,11 @@ export const logoStyle = {
 export const h2Style = {
   fontSize: "3rem",
   fontFamily: "Alata",
+};
+
+export const h1Style = {
+  fontSize: { xs: "2rem", sm: "4rem" },
+  color: lightYellow,
+  fontFamily: "Alata",
+  textAlign: "center",
 };

@@ -10,6 +10,7 @@ import {
 import { lightYellow, lavender, darkGreen } from "../styles/colors";
 import { fatergoryData } from "../data/data";
 import WarningAmberIcon from "@mui/icons-material/WarningAmber";
+import { h1Style } from "../styles/styles";
 
 const Fatergories = () => {
   return (
@@ -20,14 +21,7 @@ const Fatergories = () => {
           "https://images.unsplash.com/photo-1565130083573-0d787ac28c27?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }
         contents={
-          <Typography
-            sx={{
-              fontSize: "3rem",
-              color: lightYellow,
-              fontFamily: "Alata",
-              textAlign: "center",
-            }}
-          >
+          <Typography variant="h1" sx={h1Style}>
             What are Fatergories?
           </Typography>
         }
@@ -95,8 +89,12 @@ const Fatergories = () => {
           >
             <CardContent>
               <Typography
-                variant="h6"
-                sx={{ fontFamily: "Alata", color: lavender }}
+                variant="h2"
+                sx={{
+                  fontFamily: "Alata",
+                  color: lavender,
+                  fontSize: "1.5rem",
+                }}
               >
                 {cat.name}
               </Typography>

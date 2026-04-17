@@ -1,9 +1,9 @@
-import Box from "@mui/material/Box";
 import { lightYellow } from "../styles/colors";
 import { navItemStyle } from "../styles/styles";
-import { Container, Link, Typography } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
 import logo from "../assets/logo.png";
 import { navItems } from "../data/data";
+import { Link } from "react-router-dom";
 
 export default function SimpleBottomNavigation() {
   const getYear = () => {
@@ -43,13 +43,14 @@ export default function SimpleBottomNavigation() {
         }}
       >
         {navItems.map((item, index) => (
-          <Link
+          <Box
+            component={Link}
             key={index}
-            href={`#${item.path}`}
+            to={`#${item.path}`}
             sx={{ ...navItemStyle, mx: 2, textDecoration: "none" }}
           >
             {item.label}
-          </Link>
+          </Box>
         ))}
       </Container>
     </Box>
