@@ -7,6 +7,11 @@ import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import HotelIcon from "@mui/icons-material/Hotel";
 import { green } from "../styles/colors";
 import type { Business } from "../types/types";
+import smallFat from "../assets/smallfat.png";
+import midFat from "../assets/midfat.png";
+import largeFat from "../assets/largefat.png";
+import superFat from "../assets/superfat.png";
+import infiniFat from "../assets/infinifat.png";
 
 const iconStyle = { color: green, fontSize: 50 };
 
@@ -118,9 +123,11 @@ export const businesses: Business[] = [
     ],
 
     inclusivityScore: {
-      smallfat: 5,
-      midfat: 4,
-      infinifat: 3,
+      infiniFriendly: 85,
+      superFriendly: 92,
+      largeFriendly: 98,
+      midFriendly: 100,
+      smallFriendly: 100,
     },
 
     tags: ["outdoor seating", "tight booths", "waterfront"],
@@ -185,13 +192,14 @@ export const businesses: Business[] = [
       },
     ],
 
-    inclusivityScore: {
-      smallfat: 4.5,
-      midfat: 3.5,
-      infinifat: 2.5,
-    },
-
     tags: ["tight seating", "trendy", "dim lighting"],
+    inclusivityScore: {
+      infiniFriendly: 55,
+      superFriendly: 92,
+      largeFriendly: 98,
+      midFriendly: 100,
+      smallFriendly: 100,
+    },
   },
 
   {
@@ -265,19 +273,104 @@ export const businesses: Business[] = [
     ],
 
     inclusivityScore: {
-      smallfat: 4.5,
-      midfat: 4.5,
-      infinifat: 5,
+      infiniFriendly: 85,
+      superFriendly: 92,
+      largeFriendly: 98,
+      midFriendly: 100,
+      smallFriendly: 100,
     },
 
     tags: ["spacious", "accessible", "large tables"],
+  },
+  {
+    id: "4",
+    name: "The Skinny Spoon Café",
+    title: "Cozy Brunch & Coffee Spot",
+    description:
+      "A small, aesthetic café known for brunch plates and specialty lattes, but with very limited space.",
+    location: "Newburgh, NY",
+    address: "12 Liberty St, Newburgh, NY",
+
+    heroImage: "https://images.unsplash.com/photo-1554118811-1e0d58224f24",
+    images: [
+      {
+        img: "https://images.unsplash.com/photo-1521017432531-fbd92d768814",
+        alt: "Tiny café interior with closely packed tables and narrow walkways",
+      },
+      {
+        img: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb",
+        alt: "Small round tables with wooden chairs placed very close together",
+      },
+    ],
+
+    rating: 2.3,
+    numReviews: 3,
+
+    ratingBreakdown: {
+      seating: 1.5,
+      bathrooms: 1,
+      accessibility: 1,
+      staffTreatment: 3,
+    } as RatingBreakdown,
+
+    reviews: [
+      {
+        id: "r9",
+        author: "Kayla",
+        rating: 2,
+        bodySize: "midfat",
+        comment:
+          "Tables were extremely close together and chairs felt flimsy. I was uncomfortable the whole time.",
+        ratings: {
+          seating: 1,
+          accessibility: 1,
+        },
+        createdAt: "2026-04-08",
+      },
+      {
+        id: "r10",
+        author: "Bri",
+        rating: 1.5,
+        bodySize: "infinifat",
+        comment:
+          "Could not fit between tables and the bathroom was not accessible at all. Had to leave early.",
+        ratings: {
+          seating: 1,
+          bathrooms: 1,
+          accessibility: 1,
+        },
+        createdAt: "2026-04-09",
+      },
+      {
+        id: "r11",
+        author: "Lena",
+        rating: 3.5,
+        bodySize: "smallfat",
+        comment:
+          "Cute spot and good food! It is tight, but I didn’t personally have issues.",
+        ratings: {
+          seating: 3,
+        },
+        createdAt: "2026-04-10",
+      },
+    ],
+
+    inclusivityScore: {
+      infiniFriendly: 10,
+      superFriendly: 20,
+      largeFriendly: 35,
+      midFriendly: 60,
+      smallFriendly: 95,
+    },
+
+    tags: ["very tight seating", "small space", "not accessible"],
   },
 ];
 
 export const navItems = [
   { label: "Home", path: "" },
   { label: "About", path: "about" },
-  { label: "Fatergories", path: "fatergories" },
+  { label: "What are Fategories?", path: "Fategories" },
   { label: "Resources", path: "resources" },
   { label: "Community Guidelines", path: "community-guide" },
   { label: "Contact", path: "contact" },
@@ -317,7 +410,7 @@ export const advocacy: Resource[] = [
 ];
 export const articlesBlogs: Resource[] = [
   {
-    title: "Fatergories - Understanding the Fat Spectrum",
+    title: "Fategories - Understanding the Fat Spectrum",
     description: "Linda from fluffykittenparty explores the Fat Spectrum.",
     link: "https://fluffykittenparty.com/2021/06/01/fategories-understanding-smallfat-fragility-the-fat-spectrum/",
     image:
@@ -375,7 +468,7 @@ export const books: Resource[] = [
   },
 ];
 
-export const fatergories = ["Small", "Mid", "Large", "Super", "Infini"];
+export const Fategories = ["Small", "Mid", "Large", "Super", "Infini"];
 
 export const fatergoryData = [
   {
@@ -383,29 +476,47 @@ export const fatergoryData = [
     size: "Below roughly a US women’s size 18 (about 1X–2X)",
     description:
       "People in smaller fat bodies who may still benefit from some level of size privilege. They may not face as many physical accessibility barriers but can still experience stigma.",
+    img: smallFat,
+    alt: "'Silhouette depicting a small fat'",
   },
   {
     name: "Mid Fat",
     size: "Approximately US sizes 18–24 (around 2X–3X)",
     description:
       "People who begin to experience more consistent barriers, such as difficulty with seating, clothing access, and public comfort.",
+    img: midFat,
+    alt: "Silhouette depicting an mid fat",
   },
   {
     name: "Large Fat",
     size: "Approximately US sizes 24–32 (around 3X–5X)",
     description:
       "Individuals who frequently encounter accessibility challenges in public spaces, including seating, transportation, and medical environments.",
+    img: largeFat,
+    alt: "Silhouette depicting an large fat",
   },
   {
     name: "Superfat",
     size: "Approximately US sizes 32–40+",
     description:
       "People in larger bodies who experience significant barriers in many areas of life, including limited access to safe seating, travel, and respectful treatment.",
+    img: superFat,
+    alt: "Silhouette depicting a super fat",
   },
   {
     name: "Infinifat",
     size: "Beyond standard clothing size ranges",
     description:
       "People in the largest bodies who often face severe accessibility limitations and systemic exclusion in public and private spaces.",
+    img: infiniFat,
+    alt: "Silhouette depicting an infini fat",
   },
 ];
+
+export const sizeLabels = {
+  infiniFriendly: "Infini",
+  superFriendly: "Super",
+  largeFriendly: "Large",
+  midFriendly: "Mid",
+  smallFriendly: "Small",
+};

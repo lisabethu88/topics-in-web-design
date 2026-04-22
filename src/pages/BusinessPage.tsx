@@ -9,8 +9,9 @@ import { businesses } from "../data/data";
 import type { RatingBreakdown } from "../types/types";
 import ReviewModal from "../components/ReviewModal";
 import { useState } from "react";
-import FatergoriesTooltip from "../components/FatergoriesTooltip";
+import FategoriesTooltip from "../components/FategoriesTooltip";
 import { h1Style } from "../styles/styles";
+import SizeInclusivity from "../components/SizeInclusivity";
 
 const BusinessPage = () => {
   const [open, setOpen] = useState(false);
@@ -88,7 +89,7 @@ const BusinessPage = () => {
             </Box>
           </Box>
         ))}
-
+        <SizeInclusivity data={businessData?.inclusivityScore} />
         <Divider sx={{ my: 3 }} />
 
         <Box
@@ -128,7 +129,7 @@ const BusinessPage = () => {
                 {review.author} {/* optional: show body size */}
                 {review.bodySize && (
                   <Typography sx={{ fontSize: "0.8rem", opacity: 0.7 }}>
-                    {review.bodySize} <FatergoriesTooltip />
+                    {review.bodySize} <FategoriesTooltip />
                   </Typography>
                 )}
               </Typography>

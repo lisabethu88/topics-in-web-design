@@ -14,7 +14,7 @@ import BusinessPage from "./pages/BusinessPage";
 import Resources from "./pages/Resources";
 import CommunityGuidelines from "./pages/CommunityGuidelines";
 import Contact from "./pages/Contact";
-import Fatergories from "./pages/Fatergories";
+import Fategories from "./pages/Fategories";
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
           <Route path="/resources" element={<Resources />} />
           <Route path="/community-guide" element={<CommunityGuidelines />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/fatergories" element={<Fatergories />} />
+          <Route path="/Fategories" element={<Fategories />} />
 
           <Route path="/categories" element={<CategoriesPage />} />
           <Route path="/categories/:category" element={<CategoryPage />} />

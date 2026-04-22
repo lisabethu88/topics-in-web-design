@@ -15,8 +15,8 @@ import { darkGray, darkGreen } from "../styles/colors";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import type { FiltersType } from "../types/types";
 import { h2Style, navItemStyle } from "../styles/styles";
-import FatergoriesTooltip from "./FatergoriesTooltip";
-import { fatergories } from "../data/data";
+import FategoriesTooltip from "./FategoriesTooltip";
+import { Fategories } from "../data/data";
 
 interface FiltersProps {
   filters: FiltersType;
@@ -25,7 +25,7 @@ interface FiltersProps {
 
 const FiltersDrawer = ({ filters, setFilters }: FiltersProps) => {
   const filterOptions = {
-    fatergories: fatergories,
+    Fategories: Fategories,
   };
 
   const drawerWidth = 240;
@@ -42,19 +42,19 @@ const FiltersDrawer = ({ filters, setFilters }: FiltersProps) => {
       </Typography>
 
       <Divider sx={{ mb: 2 }} />
-      {/* FATERGORIES FILTER */}
+      {/* Fategories FILTER */}
       <Typography variant="h2" fontFamily={"Alata"} fontSize={"larger"}>
-        Fatergories <FatergoriesTooltip />
+        Fategories <FategoriesTooltip />
       </Typography>
       <List>
-        {filterOptions.fatergories.map((option) => (
+        {filterOptions.Fategories.map((option) => (
           <ListItem key={option} disablePadding>
             <ListItemButton
-              selected={filters.fatergories === option}
+              selected={filters.Fategories === option}
               onClick={() =>
                 setFilters((prev) => ({
                   ...prev,
-                  fatergories: option,
+                  Fategories: option,
                 }))
               }
             >

@@ -7,6 +7,7 @@ import { darkGray, lightYellow } from "../styles/colors";
 import CategoriesSection from "../components/CategoriesSection";
 import HowItWorks from "../components/HowItWorks";
 import WhosItFor from "../components/WhosItFor";
+import FategoriesList from "../components/FategoriesList";
 
 const Home = () => {
   const content = (
@@ -70,6 +71,8 @@ const Home = () => {
       <Divider
         sx={{ borderColor: "#2e2d2d", borderWidth: 3, mx: "10%" }}
       />{" "}
+      <FategoriesList />
+      <Divider sx={{ borderColor: "#2e2d2d", borderWidth: 3, mx: "10%" }} />
       <CategoriesSection />
       <Divider
         sx={{

@@ -63,7 +63,7 @@ export default function DrawerAppBar() {
   return (
     <Box component={"header"} sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav" elevation={0}>
+      <AppBar component="nav" elevation={0} id="desktop-navigation">
         <Toolbar
           sx={{ backgroundColor: lightYellow, justifyContent: "space-between" }}
         >
@@ -97,7 +97,7 @@ export default function DrawerAppBar() {
           </Box>
         </Toolbar>
       </AppBar>
-      <nav>
+      <nav id="mobile-navigation">
         <Drawer
           variant="temporary"
           open={mobileOpen}

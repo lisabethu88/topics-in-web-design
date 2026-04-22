@@ -9,7 +9,7 @@ import {
 import { useState } from "react";
 import type { Review, BodySizeCategory, RatingBreakdown } from "../types/types";
 import { darkGreen, lavender } from "../styles/colors";
-import FatergoriesTooltip from "./FatergoriesTooltip";
+import FategoriesTooltip from "./FategoriesTooltip";
 
 interface Props {
   open: boolean;
@@ -72,7 +72,7 @@ const ReviewModal = ({ open, onClose, onSubmit }: Props) => {
           <label htmlFor="bodySize" style={{ marginRight: "8px" }}>
             Body Size
           </label>
-          <FatergoriesTooltip />
+          <FategoriesTooltip />
         </div>
 
         <select

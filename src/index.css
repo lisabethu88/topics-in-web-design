@@ -145,3 +145,7 @@ button {
 button:hover {
   opacity: 0.9;
 }
+
+.credit-link {
+  color: #d6bcf6;
+}

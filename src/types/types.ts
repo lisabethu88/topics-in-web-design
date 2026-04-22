@@ -7,7 +7,7 @@ export type Category = {
 };
 
 export type FiltersType = {
-  fatergories: string;
+  Fategories: string;
 };
 
 export type BodySizeCategory = "smallfat" | "midfat" | "superfat" | "infinifat";
@@ -54,12 +54,7 @@ export interface Business {
 
   // Reviews
   reviews: Review[];
-
-  inclusivityScore?: {
-    smallfat: number;
-    midfat: number;
-    infinifat: number;
-  };
+  inclusivityScore?: inclusivityType;
 
   tags?: string[]; // ["booths", "tight seating", "accessible"]
 }
@@ -76,3 +71,18 @@ export interface businessImgType {
   img: string;
   alt: string;
 }
+
+export type SizeCategory =
+  | "infiniFriendly"
+  | "superFriendly"
+  | "largeFriendly"
+  | "midFriendly"
+  | "smallFriendly";
+
+export type inclusivityType = {
+  infiniFriendly: number;
+  superFriendly: number;
+  largeFriendly: number;
+  midFriendly: number;
+  smallFriendly: number;
+};

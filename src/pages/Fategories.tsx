@@ -12,7 +12,7 @@ import { fatergoryData } from "../data/data";
 import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 import { h1Style } from "../styles/styles";
 
-const Fatergories = () => {
+const Fategories = () => {
   return (
     <Box>
       {/* HERO */}
@@ -22,7 +22,7 @@ const Fatergories = () => {
         }
         contents={
           <Typography variant="h1" sx={h1Style}>
-            What are Fatergories?
+            What are Fategories?
           </Typography>
         }
       />
@@ -42,7 +42,7 @@ const Fatergories = () => {
             borderRadius: 3,
           }}
         >
-          Fatergories describe a spectrum of body sizes and lived experiences.
+          Fategories describe a spectrum of body sizes and lived experiences.
           These categories help highlight how access, comfort, and treatment can
           vary depending on body sizem especially in public spaces like
           restaurants, travel, and healthcare.
@@ -88,16 +88,31 @@ const Fatergories = () => {
             elevation={0}
           >
             <CardContent>
-              <Typography
-                variant="h2"
+              <Box
                 sx={{
-                  fontFamily: "Alata",
-                  color: lavender,
-                  fontSize: "1.5rem",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "left",
+                  paddingX: 0,
                 }}
               >
-                {cat.name}
-              </Typography>
+                <Typography
+                  variant="h2"
+                  sx={{
+                    fontFamily: "Alata",
+                    color: lavender,
+                    fontSize: "1.5rem",
+                  }}
+                >
+                  {cat.name}
+                </Typography>
+                <Box
+                  component="img"
+                  src={cat.img}
+                  sx={{ width: 45, height: 45 }}
+                  alt={cat.alt}
+                ></Box>
+              </Box>
               <Typography
                 sx={{
                   fontSize: "0.85rem",
@@ -141,4 +156,4 @@ const Fatergories = () => {
   );
 };
 
-export default Fatergories;
+export default Fategories;

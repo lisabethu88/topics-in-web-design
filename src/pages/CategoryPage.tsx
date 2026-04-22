@@ -11,7 +11,7 @@ import { h1Style } from "../styles/styles";
 
 const CategoryPage = () => {
   const [filters, setFilters] = React.useState<FiltersType>({
-    fatergories: "",
+    Fategories: "",
   });
   const { category: categoryParam } = useParams<{ category: string }>();
   const match = categories.find(
